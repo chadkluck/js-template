@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Template</title>
+</head>
+
+<body>
+	<h1>JS Template</h1>
+
+	<p>This is an example of the JS Template calling an API (api.chadkluck.net/games/) and displaying the data.</p>
+	<p>There is a configuration variable in the source code of this page as an example of allowing custom settings.</p>
+	<p>JavaScript is contained within the js/main.js file. Most of the code you will add will be in the execute() function.</p>
+
+	<script>
+		var thistemplate_config = {
+			silence: { allowToggle: true, default: false },
+			allowMultipleExecutions: false, // no reason to ever set this as true
+			apiURL: "https://api.chadkluck.net/games/", // set this to the location of the api
+	};
+	</script>
+	<script src="js/main.js"></script>
+</body>
+</html>
