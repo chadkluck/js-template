@@ -61,7 +61,7 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = null; } 
 	var configDefault = {
 		silence: { allowToggle: true, default: false },
 		allowMultipleExecutions: false, // no reason to ever set this as true
-		apiURL: "", // set this to the location of the api
+		apiURL: "https://api.chadkluck.net/games/", // set this to the location of the api
 	};
 
 	const CONFIG = configParam !== null ? configParam : configDefault;
