@@ -46,9 +46,7 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 
 	"use strict";
 
-/* *** Local variables *** */
-
-	/* Just version and credits that will show in console log */
+	/** Just version and credits that will show in console log */
 	const info = {
 		version: "0.0.1-20211027-01", // just a manual version number for debugging: "Is it loading the code I *thought* I uploaded?" Recommend 0.0.0-YYYYMMDD-00 format
 		handle:  "[YOURSCRIPT]", // the uppercase short handle that shows in console log
@@ -73,14 +71,10 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 	/** Script Config - contains values from configDefault, with any overrides passed in from pConfig */
 	const CONFIG = Object.assign(configDefault, pConfig);
 
-	/* Runtime Settings (Read/Write) */
+	/** Runtime Settings (Read/Write) These can change during execution unlike CONFIG */
 	var settings = {
 		silent: false, // does debug() output to console.log?
 	};
-
-
-/* *** Local Functions *** */
-
 
 	/* ===================================================================== */
 
@@ -114,10 +108,14 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 
 	/**
 	 * If not silenced, outputs text passed to it to console.log
-	 * Need a line number? In your code use debug(yourmessage + " - Line:"+ (new Error()).lineNumber );
-	 * This function has a companion variable: silent
-	 * 
 	 * No need to modify 
+	 * 
+	 * @example
+	 * // standard
+	 * debug(yourMessage);
+	 * 
+	 * // need a line number?
+	 * debug(yourMessage + " - Line:"+ (new Error()).lineNumber );
 	 * 
 	 * @param {string} text 
 	 */
@@ -146,6 +144,8 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 
 	/**
 	 * Connect to an api and then have a callback function do something with it
+	 * @example
+	 * getAPI(apiEndpointURL, functionToPassAPIDataTo);
 	 * @param {string} url The endpoint to contact
 	 * @param {*} callBackFunction The function to pass API data to and execute after API data is recieved.
 	 */
