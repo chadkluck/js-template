@@ -57,7 +57,13 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 		code:    "github.com/[where you can get it]" // github or other link for code - optional, leave "" if no public repository
 	};
 
-	// this can eithr be passed in as the second param (very bottom) or set here
+	/**
+	 * Configuration settings default. These will be merged and overridden by
+	 * keys (first level) passed in from pConfig.
+	 * 
+	 * Define your own config structure though silence and 
+	 * allowMultipleExecutions is required
+	 */
 	const configDefault = {
 		silence: { allowToggle: true, default: false },
 		allowMultipleExecutions: false, // no reason to ever set this as true
