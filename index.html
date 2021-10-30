@@ -17,7 +17,8 @@
 			silence: { allowToggle: true, default: false },
 			allowMultipleExecutions: false, // no reason to ever set this as true
 			apiURL: "https://api.chadkluck.net/games/", // set this to the location of the api
-	};
+			callback: (function(param1, param2) { console.log("Example callback: " + param1 + " " + param2); })
+		};
 	</script>
 	<script src="js/main.js"></script>
 </body>

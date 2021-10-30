@@ -66,6 +66,7 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 		silence: { allowToggle: true, default: false },
 		allowMultipleExecutions: false, // no reason to ever set this as true
 		apiURL: "https://api.chadkluck.net/games/", // set this to the location of the api
+		callback: null
 	};
 
 	/** Script Config - contains values from configDefault, with any overrides passed in from pConfig */
@@ -167,8 +168,8 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 
 		/* local variables */
 		var vars = {
-			foo: 1,
-			bar: 2
+			foo: "Hello",
+			bar: "World"
 		};
 
 		const showData = function(data) {
@@ -196,6 +197,12 @@ if (typeof thistemplate_config === 'undefined') { thistemplate_config = {}; } //
 			document.getElementsByTagName("body")[0].appendChild(ul);
 			// or append it to any element you specify an id for:
 			//document.getElementById("someid").appendChild(div);
+
+			/* OPTIONAL if you wish to pass a callback function to execute once 
+			this script is done. You can also pass it optional parameters */
+			if ( "callback" in CONFIG && CONFIG.callback !== null) {
+				CONFIG.callback(vars.foo, vars.bar); // CONFIG.callback()
+			}
 
 			// ----- END API CODE EXAMPLE
 		}
